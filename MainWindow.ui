@@ -1,0 +1,4201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowClass</class>
+ <widget class="QMainWindow" name="MainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>575</width>
+    <height>534</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>NESS.Gen - Dead Simple NESS Flag Generation</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="NESSGen.qrc">
+    <normaloff>:/MainWindow/Resources/NessGen.png</normaloff>:/MainWindow/Resources/NessGen.png</iconset>
+  </property>
+  <property name="statusTip">
+   <string>NESS.Gen v1.0 by FoamBats4All</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinAndMaxSize</enum>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="Output_v">
+        <property name="minimumSize">
+         <size>
+          <width>555</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>555</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="twMain">
+        <property name="minimumSize">
+         <size>
+          <width>555</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>555</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tabBasics">
+         <attribute name="title">
+          <string>Basics</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QGroupBox" name="gbSpawnPoint">
+            <property name="title">
+             <string>Spawn Point</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="1" column="0">
+              <widget class="QLabel" name="CycleRate_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Cycle Rate:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="wordWrap">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="CycleRate_v">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="statusTip">
+                <string>Seconds between spawn cycles.</string>
+               </property>
+               <property name="buttonSymbols">
+                <enum>QAbstractSpinBox::PlusMinus</enum>
+               </property>
+               <property name="suffix">
+                <string> seconds</string>
+               </property>
+               <property name="minimum">
+                <number>6</number>
+               </property>
+               <property name="maximum">
+                <number>3600</number>
+               </property>
+               <property name="singleStep">
+                <number>6</number>
+               </property>
+               <property name="value">
+                <number>6</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="CycleOffset_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Offset:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="CycleOffset_v">
+               <property name="statusTip">
+                <string>Offsets a cycle. Useful for staggering spawns on the same heartbeat.</string>
+               </property>
+               <property name="buttonSymbols">
+                <enum>QAbstractSpinBox::PlusMinus</enum>
+               </property>
+               <property name="suffix">
+                <string> heartbeats</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="SpawnType_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Type:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="SpawnType_v">
+               <property name="statusTip">
+                <string>Determines if the spawn is for a creature, group, placeable, or item.</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Creature</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Group</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Placeable</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Item</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbNumbers">
+            <property name="title">
+             <string>Numbers</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_2">
+             <item row="0" column="0">
+              <widget class="QLabel" name="TotalSpawns_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Total Spawns:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="TotalSpawnsMin_v">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="statusTip">
+                <string>Minimum number of creatures to be maintained.</string>
+               </property>
+               <property name="suffix">
+                <string> minimum</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>99</number>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="TotalSpawnsMax_v">
+               <property name="statusTip">
+                <string>Maximum number of creatures to be maintained.</string>
+               </property>
+               <property name="suffix">
+                <string> maximum</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="SpawnsPerCycle_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Spawns per Cycle:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="SpawnsPerCycleMin_v">
+               <property name="statusTip">
+                <string>Minimum number of spawns per cycle.</string>
+               </property>
+               <property name="suffix">
+                <string> minimum</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSpinBox" name="SpawnsPerCycleMax_v">
+               <property name="statusTip">
+                <string>Maximum number of spawns per cycle.</string>
+               </property>
+               <property name="suffix">
+                <string> maximum</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QWidget" name="gbNumbersPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QWidget" name="gbNumbersPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="SpawnChance_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Spawn Chance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QSlider" name="SpawnChance_v">
+               <property name="statusTip">
+                <string>Chance of a spawn happening (1-100%).</string>
+               </property>
+               <property name="minimum">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="sliderPosition">
+                <number>100</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbPlaceProp">
+            <property name="title">
+             <string>Placeable Properties</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_19">
+             <item row="0" column="0">
+              <widget class="QLabel" name="PlaceBehavior_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Behavior:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="PlaceBehavior_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Behavior of a placeable after it spawns.</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Default behavior</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Despawn if empty</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Refill if empty</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Refresh at an interval</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSlider" name="TrapDisableChance_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Chance of the placeable spawning with its trap disabled. </string>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="RefreshInterval_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Refresh Interval:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="RefreshInterval_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Interval that the placeable will refresh itself, if specified above.</string>
+               </property>
+               <property name="suffix">
+                <string> minutes</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>999</number>
+               </property>
+               <property name="value">
+                <number>60</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="TrapDisableChance_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Trap Disable Chance:</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpaceBasics">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabState">
+         <attribute name="title">
+          <string>State</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QGroupBox" name="gbForcedState">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Forced State</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_4">
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="InitialState_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Initial State:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QWidget" name="gbForcedStatePad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="InitialStateDelay_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Number of minutes to delay the initial state force.</string>
+               </property>
+               <property name="suffix">
+                <string> minute delay.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="InitialState_v">
+               <property name="statusTip">
+                <string>Set a custom forced initial state.</string>
+               </property>
+               <property name="currentIndex">
+                <number>2</number>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Disabled</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Enabled</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>None</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbDelay">
+            <property name="title">
+             <string>Delay</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_5">
+             <item row="0" column="0">
+              <widget class="QLabel" name="RespawnDelay_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Respawn Delay:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="RespawnDelayMin_v">
+               <property name="statusTip">
+                <string>Minimum number of minutes (since death) for a respawn.</string>
+               </property>
+               <property name="suffix">
+                <string> minutes (minimum)</string>
+               </property>
+               <property name="prefix">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="RespawnDelayMax_v">
+               <property name="statusTip">
+                <string>Maximum number of minutes (since death) for a respawn.</string>
+               </property>
+               <property name="suffix">
+                <string> minutes (maximum)</string>
+               </property>
+               <property name="prefix">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="RespawnRegulate_v">
+               <property name="statusTip">
+                <string>Regular schedule for respawning.</string>
+               </property>
+               <property name="text">
+                <string>Regulate respawning.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QWidget" name="gbDelayPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbDelayPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbDeactivation">
+            <property name="title">
+             <string>Deactivation</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_20">
+             <property name="fieldGrowthPolicy">
+              <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="DeactivateCond_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Condition:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="DeactivateCond_v">
+               <property name="statusTip">
+                <string>Condition that a spawn will deactivate itself.</string>
+               </property>
+               <property name="currentIndex">
+                <number>7</number>
+               </property>
+               <item>
+                <property name="text">
+                 <string>If all children are dead</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>If spawn number has been spawned</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Until all children are dead</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>After a set number of children die :(</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>After a set number of minutes</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>After a set number of cycles</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>When spawn count equals spawn number</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Never</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="DeactivateSetNum_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>&quot;Set Number&quot;:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="DeactivateSetNum_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Number of children, minutes, or cycles, if specified above.</string>
+               </property>
+               <property name="suffix">
+                <string/>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="DeactivateScript_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Script Entry:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbDeactivePad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="DeactivateScriptCheck_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Execute a script entry when deactivated.</string>
+               </property>
+               <property name="text">
+                <string>Run script entry when disabled</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSpinBox" name="DeactivateScript_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>ID of the script entry to run.</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpaceState">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabProximity">
+         <attribute name="title">
+          <string>Proximity</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QGroupBox" name="gbPCArea">
+            <property name="title">
+             <string>PC in Area</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_11">
+             <item row="1" column="0">
+              <widget class="QLabel" name="PCAreaDespawn_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Despawn Delay:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="PCAreaDespawn_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Delay after all PCs exit the area that the spawn despawns.</string>
+               </property>
+               <property name="suffix">
+                <string> minutes</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbPCAreaPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="PCAreaCheck_v">
+               <property name="statusTip">
+                <string>Enable PC area checks.</string>
+               </property>
+               <property name="text">
+                <string>Spawn only if a PC is in the area</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbPCAreaPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="PCAreaFullReset_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Reset the spawn entirely to its initial state once there are no PCs.</string>
+               </property>
+               <property name="text">
+                <string>Fully reset spawn</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbPCDistance">
+            <property name="title">
+             <string>PC Distance Requirments</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_12">
+             <item row="1" column="0">
+              <widget class="QLabel" name="PCDistanceRange_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Distance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbPCDistancePad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="PCDistanceCheck_v">
+               <property name="statusTip">
+                <string>Enable PC distance checks.</string>
+               </property>
+               <property name="text">
+                <string>Disable spawns if PCs are too close</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="PCDistanceRange_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Distance PCs must be to enable spawns.</string>
+               </property>
+               <property name="suffix">
+                <string> meters</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbPCDistancePad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="PCDistanceAltCheck_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Check at spawn locations, and not at the waypoint.</string>
+               </property>
+               <property name="text">
+                <string>Check alternative spawn locations</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="PCDistanceAltChecks_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Spawn Attempts:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSpinBox" name="PCDistanceAltChecks_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Number of alternative spawn attempts before giving up.</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbPCProximity">
+            <property name="title">
+             <string>PC Proximity Trigger</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_13">
+             <item row="1" column="0">
+              <widget class="QLabel" name="PCProximityDistance_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Distance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="PCProximityDistance_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Distance PCs must be within for spawns to occur.</string>
+               </property>
+               <property name="suffix">
+                <string> meters</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbPCProximityPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbPCProximityPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="PCProximityDespawnCheck_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Remove spawns if PCs leave a range.</string>
+               </property>
+               <property name="text">
+                <string>Despawn if PCs are not within range</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSpinBox" name="PCProximityDespawnRange_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Range PCs must travel to force despawn.</string>
+               </property>
+               <property name="suffix">
+                <string> meters</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="PCProximityDespawnRange_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Range:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="PCProximityCheck_v">
+               <property name="statusTip">
+                <string>Enable PC distance checks.</string>
+               </property>
+               <property name="text">
+                <string>Disable spawns if PCs are too far</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpaceProximity">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabPlacement">
+         <attribute name="title">
+          <string>Placement</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QGroupBox" name="gbLocation">
+            <property name="title">
+             <string>Location and Bearing</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_6">
+             <item row="0" column="0">
+              <widget class="QLabel" name="LocationRange_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Distance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="LocationRangeMin_v">
+               <property name="statusTip">
+                <string>Minimum distance from the waypoint to spawn.</string>
+               </property>
+               <property name="suffix">
+                <string> meters (minimum)</string>
+               </property>
+               <property name="maximum">
+                <number>99999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="LocationRangeMax_v">
+               <property name="statusTip">
+                <string>Maximum distance from the waypoint to spawn.</string>
+               </property>
+               <property name="suffix">
+                <string> meters (maximum)</string>
+               </property>
+               <property name="maximum">
+                <number>99999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QWidget" name="gbLocationPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="LocationAtPC_v">
+               <property name="statusTip">
+                <string>Spawn at a random PC's position within range.</string>
+               </property>
+               <property name="text">
+                <string>Spawn at PC position</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbLocationPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QCheckBox" name="LocationForceRotate_v">
+               <property name="statusTip">
+                <string>Force spawn to face the waypoint's direction.</string>
+               </property>
+               <property name="text">
+                <string>Enforce bearing</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QWidget" name="gbLocationPad3" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbAltLocation">
+            <property name="title">
+             <string>Alternate Spawn Location</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_7">
+             <item row="1" column="0">
+              <widget class="QLabel" name="AltLocationWP_l">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Waypoint:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbAltLocationPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="AltLocationCheck_v">
+               <property name="statusTip">
+                <string>Redundant with an entrance spawn point.</string>
+               </property>
+               <property name="text">
+                <string>Use alternative spawn locations</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="AltLocationWPLow_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Tag of the waypoint to spawn at.</string>
+               </property>
+               <property name="prefix">
+                <string>SL</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="AltLocationWPHigh_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Tag of the waypoint to spawn at.</string>
+               </property>
+               <property name="prefix">
+                <string>SL</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbAltLocationPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpacePlacement">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabEnterExit">
+         <attribute name="title">
+          <string>Entrance/Exit</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QGroupBox" name="gbCustomSpawn">
+            <property name="title">
+             <string>Custom Spawn Waypoints</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_8">
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbCustomSpawnPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="CustomSpawnCheck_v">
+               <property name="statusTip">
+                <string>Enable spawning at tagged waypoints.</string>
+               </property>
+               <property name="text">
+                <string>Use custom spawn waypoint</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_18">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Waypoint:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="CustomSpawnWPLow_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Tag of the first possible waypoint to spawn at.</string>
+               </property>
+               <property name="prefix">
+                <string>EE</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="CustomSpawnWPHigh_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Tag of the last possible waypoint to spawn at.</string>
+               </property>
+               <property name="prefix">
+                <string>EE</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbCustomSpawnPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbCustomDespawn">
+            <property name="title">
+             <string>Custom Despawn Waypoints</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_9">
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbCustomDespawnPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="CustomDespawnCheck_v">
+               <property name="statusTip">
+                <string>Enable despawning at tagged waypoints.</string>
+               </property>
+               <property name="text">
+                <string>Use custom despawn waypoint</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="CustomDespawnWP_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Waypoint:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="CustomDespawnWPLow_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Tag of the first possible waypoint to despawn at.</string>
+               </property>
+               <property name="prefix">
+                <string>EX</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="CustomDespawnWPHigh_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Tag of the last possible waypoint to despawn at.</string>
+               </property>
+               <property name="prefix">
+                <string>EX</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="gbCustomDespawnPad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbEffects">
+            <property name="title">
+             <string>Spawn Effect</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_21">
+             <item row="1" column="0">
+              <widget class="QLabel" name="EffectID_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Spawn Effect ID:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="EffectID_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Effect ID to launch on spawn.</string>
+               </property>
+               <property name="maximum">
+                <number>256</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="EffectDuration_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Duration:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="EffectDuration_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Duration of the effect. A duration of 0 is permanent. </string>
+               </property>
+               <property name="suffix">
+                <string> seconds</string>
+               </property>
+               <property name="maximum">
+                <number>999</number>
+               </property>
+               <property name="value">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="Effect_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Effect:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="Effect_v">
+               <property name="statusTip">
+                <string>Enable visual effects upon spawn.</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>None</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Area Effect (AOE)</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Visual Effect (VFX)</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Object Effect (VFX)</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpaceEnterExit">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabDateTime">
+         <attribute name="title">
+          <string>Date &amp;&amp; Time</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QGroupBox" name="gbDateTime">
+            <property name="title">
+             <string>Date &amp;&amp; Time</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="DayNightCheck_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Day/Night Checks:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="DayNightCheck_v">
+               <property name="statusTip">
+                <string>Allow spawns only at day or night.</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>None</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Day only</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Day only, despawn at dusk</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Night only</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Night only, despawn at dawn</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QWidget" name="gbDateTimePad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QCheckBox" name="CheckDayEnable_v">
+               <property name="statusTip">
+                <string>Enable specific day checks.</string>
+               </property>
+               <property name="text">
+                <string>Limit spawns to specific days of the month</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="CheckDayStart_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Start Day:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="CheckDayStart_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>The first day of the month the spawn will be active.</string>
+               </property>
+               <property name="readOnly">
+                <bool>false</bool>
+               </property>
+               <property name="suffix">
+                <string/>
+               </property>
+               <property name="prefix">
+                <string/>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>28</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="CheckDayEnd_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>End Day:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSpinBox" name="CheckDayEnd_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>The last day of the month the spawn will be active.</string>
+               </property>
+               <property name="suffix">
+                <string/>
+               </property>
+               <property name="prefix">
+                <string/>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>28</number>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QWidget" name="gbDateTimePad2" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QCheckBox" name="CheckHourEnable_v">
+               <property name="statusTip">
+                <string>Enable specific hour checks.</string>
+               </property>
+               <property name="text">
+                <string>Limit spawns to specific hours of the day</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="CheckHourStart_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Spawn Hour:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QSpinBox" name="CheckHourStart_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Earliest hour the spawn will be active.</string>
+               </property>
+               <property name="maximum">
+                <number>24</number>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="CheckHourEnd_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Despawn Hour:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QSpinBox" name="CheckHourEnd_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Last hour the spawn will be active.</string>
+               </property>
+               <property name="maximum">
+                <number>24</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpaceDateTime">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabSpecials">
+         <attribute name="title">
+          <string>Specials</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QGroupBox" name="gbAlignment">
+            <property name="title">
+             <string>Alignment</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_14">
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbAlignmentPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="AlignmentCheck_v">
+               <property name="statusTip">
+                <string>Adjust alignment of the spawn.</string>
+               </property>
+               <property name="text">
+                <string>Adjust alignment of spawns</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="AlignmentAxis_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Axis:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="AlignmentAdjust_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Adjustment:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="AlignmentAxis_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Axis to shift alignment towards.</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Neutral</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Lawful</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Chaos</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Good</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Evil</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>All</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="AlignmentAdjust_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Amount to shift the alignment.</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbFaction">
+            <property name="title">
+             <string>Faction</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_15">
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="FactionCheck_v">
+               <property name="statusTip">
+                <string>Set the faction of the spawn.</string>
+               </property>
+               <property name="text">
+                <string>Adjust faction of spawns</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="FactionSet_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Faction:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="FactionSet_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Faction to set.</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Commoner</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Defender</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Merchant</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Hostile</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbFactionPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbLifespan">
+            <property name="title">
+             <string>Lifespan</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_17">
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbLifespanPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="LifespanCheck_v">
+               <property name="statusTip">
+                <string>Set the explicit lifespan of a spawn.</string>
+               </property>
+               <property name="text">
+                <string>Despawn after a certain amount of time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="LifespanTimeMin_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Minimum Time:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="LifespanTimeMax_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Maximum Time:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="LifespanTimeMin_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Despawn at a random interval between the minimum and maximum time.</string>
+               </property>
+               <property name="suffix">
+                <string> minutes</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="LifespanTimeMax_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Despawn at a random interval between the minimum and maximum time.</string>
+               </property>
+               <property name="suffix">
+                <string> minutes</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>999</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbOther">
+            <property name="title">
+             <string>Other</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_16">
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbOtherPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="FlagPlot_v">
+               <property name="statusTip">
+                <string>Spawn with the &quot;plot&quot; flag set.</string>
+               </property>
+               <property name="text">
+                <string>Flag spawn as a plot object</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="Regeneration_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Regeneration:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSlider" name="Regeneration_v">
+               <property name="statusTip">
+                <string>Regenerate between 0-100% of the spawn's total life each cycle.</string>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="RegenerationStatusPurge_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Regeneration will also purge all effects on the spawn if they are not at maximum health.</string>
+               </property>
+               <property name="text">
+                <string>Remove all effects</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="widget" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpaceSpecials">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabCorpse">
+         <attribute name="title">
+          <string>Corpse</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QGroupBox" name="gbCorpseDecay">
+            <property name="title">
+             <string>Corpse Decay</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_10">
+             <item row="1" column="0">
+              <widget class="QLabel" name="CorpseDecayDuration_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Duration:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbCorpseDecayPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="CorpseDecayCheck_v">
+               <property name="statusTip">
+                <string>Use NESS corpse effects.</string>
+               </property>
+               <property name="text">
+                <string>Use corpse decay</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="CorpseDecayLoot_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Lootable Items:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QComboBox" name="CorpseDecayLoot_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Items from the creature that drop on death.</string>
+               </property>
+               <property name="currentIndex">
+                <number>4</number>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Inventory items only</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Inventory items only, if the PC killed the creature</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Inventory items and equipped items</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Inventory items and equipped, if the PC killed the creature</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>None</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="CorpseDecayRemains_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Remains:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QComboBox" name="CorpseDecayRemains_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Graphic of the loot after the corpse fades.</string>
+               </property>
+               <property name="currentIndex">
+                <number>0</number>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Loot Bag</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Body</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Bones</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Potion</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pouch</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Scroll</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Treasure</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>None (destroy loot on decay)</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="CorpseDecayDuration_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Duration a corpse remains before turning into a loot bag.</string>
+               </property>
+               <property name="suffix">
+                <string> seconds</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>90</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbGold">
+            <property name="title">
+             <string>Gold</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_18">
+             <item row="0" column="0">
+              <widget class="QLabel" name="GoldLoot_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Gold:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="GoldLootMin_v">
+               <property name="statusTip">
+                <string>Minimum gold to spawn with.</string>
+               </property>
+               <property name="suffix">
+                <string>g minimum</string>
+               </property>
+               <property name="maximum">
+                <number>99999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="GoldLootMax_v">
+               <property name="statusTip">
+                <string>Maximum gold to spawn with.</string>
+               </property>
+               <property name="suffix">
+                <string>g maximum</string>
+               </property>
+               <property name="maximum">
+                <number>99999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QWidget" name="gbGoldPad1" native="true"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="GoldLootChance_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Chance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSlider" name="GoldLootChance_v">
+               <property name="statusTip">
+                <string>Chance of the spawn having gold on its corpse.</string>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="value">
+                <number>100</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="invertedAppearance">
+                <bool>false</bool>
+               </property>
+               <property name="invertedControls">
+                <bool>false</bool>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbLoot">
+            <property name="title">
+             <string>Loot</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_22">
+             <item row="0" column="0">
+              <widget class="QWidget" name="gbLootPad1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="LootCheck_v">
+               <property name="statusTip">
+                <string>Use a loot table.</string>
+               </property>
+               <property name="text">
+                <string>Drops loot</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="LootStore_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Loot Store:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="LootStore_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Loot table ID.</string>
+               </property>
+               <property name="prefix">
+                <string>LOOT_</string>
+               </property>
+               <property name="minimum">
+                <number>500</number>
+               </property>
+               <property name="maximum">
+                <number>999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="LootSpawn1_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Single Chance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="LootSpawn2_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Double Chance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="LootSpawn3_l">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Triple Chance:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSlider" name="LootSpawn1_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Chance of 1 item spawning.</string>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="value">
+                <number>50</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSlider" name="LootSpawn2_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Chance of 2 items spawning.</string>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="value">
+                <number>15</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QSlider" name="LootSpawn3_v">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="statusTip">
+                <string>Chance of 3 items spawning.</string>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+               <property name="value">
+                <number>5</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="tickPosition">
+                <enum>QSlider::TicksBelow</enum>
+               </property>
+               <property name="tickInterval">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="vSpaceCorpse">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="statusTip">
+    <string>NESS.Gen v1.0 by FoamBats4All</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="NESSGen.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>InitialState_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>InitialState_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DeactivateCond_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>DeactivateCond_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CycleRate_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CycleRate_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CycleOffset_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CycleOffset_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TotalSpawnsMin_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>TotalSpawnsMin_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpawnChance_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>SpawnChance_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>317</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpawnsPerCycleMin_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>SpawnsPerCycleMin_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>264</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpawnsPerCycleMax_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>SpawnsPerCycleMax_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpawnType_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>SpawnType_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PlaceBehavior_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PlaceBehavior_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RefreshInterval_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>RefreshInterval_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TrapDisableChance_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>TrapDisableChance_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>433</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>InitialStateDelay_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>InitialStateDelay_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>InitialState_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>InitialState_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RespawnDelayMin_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>RespawnDelayMin_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RespawnDelayMax_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>RespawnDelayMax_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TotalSpawnsMax_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>TotalSpawnsMax_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RespawnRegulate_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>RespawnRegulate_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DeactivateSetNum_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>DeactivateSetNum_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>320</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DeactivateScriptCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>DeactivateScriptCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DeactivateScript_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>DeactivateScript_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>369</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCAreaCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCAreaCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCAreaDespawn_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCAreaDespawn_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCAreaFullReset_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCAreaFullReset_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCDistanceCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCDistanceCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>205</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCDistanceRange_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCDistanceRange_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCDistanceAltChecks_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCDistanceAltChecks_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>278</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCDistanceAltCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCDistanceAltCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCProximityCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCProximityCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCProximityDistance_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCProximityDistance_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>360</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCProximityDespawnCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCProximityDespawnCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCProximityDespawnRange_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>PCProximityDespawnRange_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>409</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LocationRangeMin_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LocationRangeMin_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LocationRangeMax_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LocationRangeMax_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LocationAtPC_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LocationAtPC_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LocationForceRotate_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LocationForceRotate_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AltLocationCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>AltLocationCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AltLocationWPLow_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>AltLocationWPLow_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AltLocationWPHigh_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>AltLocationWPHigh_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>281</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CustomSpawnCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CustomSpawnCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CustomSpawnWPLow_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CustomSpawnWPLow_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CustomSpawnWPHigh_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CustomSpawnWPHigh_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CustomDespawnCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CustomDespawnCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CustomDespawnWPLow_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CustomDespawnWPLow_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CustomDespawnWPHigh_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CustomDespawnWPHigh_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Effect_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>Effect_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>317</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>EffectID_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>EffectID_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>EffectDuration_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>EffectDuration_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>369</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DayNightCheck_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>DayNightCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckDayEnable_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CheckDayEnable_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckDayStart_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CheckDayStart_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckDayEnd_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CheckDayEnd_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>176</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckHourEnable_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CheckHourEnable_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckHourStart_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CheckHourStart_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckHourEnd_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CheckHourEnd_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AlignmentCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>AlignmentCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AlignmentAxis_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>AlignmentAxis_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>AlignmentAdjust_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>AlignmentAdjust_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FactionCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>FactionCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FactionSet_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>FactionSet_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LifespanCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LifespanCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LifespanTimeMin_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LifespanTimeMin_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LifespanTimeMax_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LifespanTimeMax_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>340</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FlagPlot_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>FlagPlot_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>398</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Regeneration_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>Regeneration_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RegenerationStatusPurge_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>RegenerationStatusPurge_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CorpseDecayCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CorpseDecayCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CorpseDecayDuration_v</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CorpseDecayDuration_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CorpseDecayLoot_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CorpseDecayLoot_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CorpseDecayRemains_v</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>CorpseDecayRemains_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>176</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GoldLootMin_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>GoldLootMin_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GoldLootMax_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>GoldLootMax_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GoldLootChance_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>GoldLootChance_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LootCheck_v</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LootCheck_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LootStore_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LootStore_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>373</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LootSpawn1_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LootSpawn1_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>401</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LootSpawn2_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LootSpawn2_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>431</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LootSpawn3_v</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindowClass</receiver>
+   <slot>LootSpawn3_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>461</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>266</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SpawnType_Changed()</slot>
+  <slot>CycleRate_Changed()</slot>
+  <slot>CycleOffset_Changed()</slot>
+  <slot>TotalSpawnsMin_Changed()</slot>
+  <slot>TotalSpawnsMax_Changed()</slot>
+  <slot>SpawnsPerCycleMin_Changed()</slot>
+  <slot>SpawnsPerCycleMax_Changed()</slot>
+  <slot>SpawnChance_Changed()</slot>
+  <slot>PlaceBehavior_Changed()</slot>
+  <slot>RefreshInterval_Changed()</slot>
+  <slot>TrapDisableChance_Changed()</slot>
+  <slot>InitialState_Changed()</slot>
+  <slot>InitialStateDelay_Changed()</slot>
+  <slot>RespawnDelayMin_Changed()</slot>
+  <slot>RespawnDelayMax_Changed()</slot>
+  <slot>RespawnRegulate_Changed()</slot>
+  <slot>DeactivateCond_Changed()</slot>
+  <slot>DeactivateSetNum_Changed()</slot>
+  <slot>DeactivateScriptCheck_Changed()</slot>
+  <slot>DeactivateScript_Changed()</slot>
+  <slot>PCAreaCheck_Changed()</slot>
+  <slot>PCAreaDespawn_Changed()</slot>
+  <slot>PCAreaFullReset_Changed()</slot>
+  <slot>PCDistanceCheck_Changed()</slot>
+  <slot>PCDistanceRange_Changed()</slot>
+  <slot>PCDistanceAltCheck_Changed()</slot>
+  <slot>PCDistanceAltChecks_Changed()</slot>
+  <slot>PCProximityCheck_Changed()</slot>
+  <slot>PCProximityDistance_Changed()</slot>
+  <slot>PCProximityDespawnCheck_Changed()</slot>
+  <slot>PCProximityDespawnRange_Changed()</slot>
+  <slot>LocationRangeMin_Changed()</slot>
+  <slot>LocationRangeMax_Changed()</slot>
+  <slot>LocationAtPC_Changed()</slot>
+  <slot>LocationForceRotate_Changed()</slot>
+  <slot>AltLocationCheck_Changed()</slot>
+  <slot>AltLocationWPLow_Changed()</slot>
+  <slot>AltLocationWPHigh_Changed()</slot>
+  <slot>CustomSpawnCheck_Changed()</slot>
+  <slot>CustomSpawnWPLow_Changed()</slot>
+  <slot>CustomSpawnWPHigh_Changed()</slot>
+  <slot>CustomDespawnCheck_Changed()</slot>
+  <slot>CustomDespawnWPLow_Changed()</slot>
+  <slot>CustomDespawnWPHigh_Changed()</slot>
+  <slot>Effect_Changed()</slot>
+  <slot>EffectID_Changed()</slot>
+  <slot>EffectDuration_Changed()</slot>
+  <slot>DayNightCheck_Changed()</slot>
+  <slot>CheckDayEnable_Changed()</slot>
+  <slot>CheckDayStart_Changed()</slot>
+  <slot>CheckDayEnd_Changed()</slot>
+  <slot>CheckHourEnable_Changed()</slot>
+  <slot>CheckHourStart_Changed()</slot>
+  <slot>CheckHourEnd_Changed()</slot>
+  <slot>AlignmentCheck_Changed()</slot>
+  <slot>AlignmentAxis_Changed()</slot>
+  <slot>AlignmentAdjust_Changed()</slot>
+  <slot>FactionCheck_Changed()</slot>
+  <slot>FactionSet_Changed()</slot>
+  <slot>LifespanCheck_Changed()</slot>
+  <slot>LifespanTimeMin_Changed()</slot>
+  <slot>LifespanTimeMax_Changed()</slot>
+  <slot>FlagPlot_Changed()</slot>
+  <slot>Regeneration_Changed()</slot>
+  <slot>RegenerationStatusPurge_Changed()</slot>
+  <slot>CorpseDecayCheck_Changed()</slot>
+  <slot>CorpseDecayDuration_Changed()</slot>
+  <slot>CorpseDecayLoot_Changed()</slot>
+  <slot>CorpseDecayRemains_Changed()</slot>
+  <slot>GoldLootMin_Changed()</slot>
+  <slot>GoldLootMax_Changed()</slot>
+  <slot>GoldLootChance_Changed()</slot>
+  <slot>LootCheck_Changed()</slot>
+  <slot>LootStore_Changed()</slot>
+  <slot>LootSpawn1_Changed()</slot>
+  <slot>LootSpawn2_Changed()</slot>
+  <slot>LootSpawn3_Changed()</slot>
+ </slots>
+</ui>
